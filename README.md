@@ -6,3 +6,4 @@
 Repositório destinado às atividadades realizadas na disciplina de Arquitetura e Organização de Computadores.
 
 ## Aulas
+[03/08/2026](RUDI) - Implementação de calculadora rudimentar
