@@ -13,7 +13,7 @@
     LD A
     SUB B
     BGT GREATER
-    BLT LESS
+    BLT LOWER
 
 EQUALS:
     LDI 1
@@ -23,7 +23,7 @@ GREATER:
     LDI 2
     JMP END
 
-LESS:
+LOWER:
     LDI 3
 
 END:

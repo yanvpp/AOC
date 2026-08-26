@@ -14,7 +14,7 @@
     SUB B
     BEQ EQUALS
     BGT GREATER
-    BLT LESS
+    BLT LOWER
     JMP END
 
 EQUALS:
@@ -29,7 +29,7 @@ GREATER:
     STO A
     JMP END
 
-LESS:
+LOWER:
     LD A
     ADDI 3
     STO A
