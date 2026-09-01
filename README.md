@@ -5,6 +5,9 @@
 # Arquitetura e Organização de Computadores
 Repositório destinado às atividadades realizadas na disciplina de Arquitetura e Organização de Computadores.
 
+## Materiais
+- [Materiais para estudo e consulta](materiais)
+
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
 - [05/08/2026](computadorRUDI) - Implementação de computador rudimentar
