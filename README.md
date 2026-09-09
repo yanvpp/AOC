@@ -13,3 +13,4 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [05/08/2026](computadorRUDI) - Implementação de computador rudimentar
 - [11/08/2026](computadorRUDI) - Finalizando implementação do programa de matrícula
 - [12/08/2026](BIP) - Apresentação sobre BIP e lista de exercícios
+- [09/09/2026](aulas.X/aula1.ASM) - Configuração do MPLAB
