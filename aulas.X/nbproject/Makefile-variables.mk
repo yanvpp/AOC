@@ -6,5 +6,5 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=AOC129004.X.production.obj
-CND_ARTIFACT_PATH_default=dist/default/production/AOC129004.X.production.obj
+CND_ARTIFACT_NAME_default=aulas.X.production.obj
+CND_ARTIFACT_PATH_default=dist/default/production/aulas.X.production.obj
