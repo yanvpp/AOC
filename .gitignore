@@ -41,11 +41,11 @@
 /*
 !/*.gitignore
 ##
-!*.qpf
+# !*.qpf
 !*.qsf
 !*.qws
 !*.bdf
-!*.vhd
+# !*.vhd
 !*.v
 !*.ptf
 !*.bsf
