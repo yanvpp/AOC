@@ -7,6 +7,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 
 ## Materiais
 - [Materiais para estudo e consulta](materiais)
+- **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
