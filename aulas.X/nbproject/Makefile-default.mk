@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=aula2.ASM
+SOURCEFILES_QUOTED_IF_SPACED=aula_03.ASM
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/aula2.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/aula2.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/aula_03.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/aula_03.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/aula2.o
+OBJECTFILES=${OBJECTDIR}/aula_03.o
 
 # Source Files
-SOURCEFILES=aula2.ASM
+SOURCEFILES=aula_03.ASM
 
 # Pack Options 
 PACK_ASSEMBLER_OPTIONS=-I "${DFP_DIR}/avrasm/inc"  -i m328Pdef.inc
@@ -90,17 +90,17 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/aula2.o: aula2.ASM  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/aula_03.o: aula_03.ASM  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} ${DISTDIR} 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/aula2.o 
-	${MP_AS}  -fI -W+ie ${PACK_ASSEMBLER_OPTIONS} -d ${DISTDIR}/aulas.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -m ${DISTDIR}/aulas.X.${IMAGE_TYPE}.map  -S ${DISTDIR}/aulas.X.${IMAGE_TYPE}.tmp aula2.ASM
+	@${RM} ${OBJECTDIR}/aula_03.o 
+	${MP_AS}  -fI -W+ie ${PACK_ASSEMBLER_OPTIONS} -d ${DISTDIR}/aulas.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -m ${DISTDIR}/aulas.X.${IMAGE_TYPE}.map  -S ${DISTDIR}/aulas.X.${IMAGE_TYPE}.tmp aula_03.ASM
 else
-${OBJECTDIR}/aula2.o: aula2.ASM  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/aula_03.o: aula_03.ASM  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} ${DISTDIR} 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/aula2.o 
-	${MP_AS}  -fI -W+ie ${PACK_ASSEMBLER_OPTIONS} -d ${DISTDIR}/aulas.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -S ${DISTDIR}/aulas.X.${IMAGE_TYPE}.tmp  -o ${DISTDIR}/aulas.X.${IMAGE_TYPE}.hex  -m ${DISTDIR}/aulas.X.${IMAGE_TYPE}.map  -l ${DISTDIR}/aulas.X.${IMAGE_TYPE}.lss aula2.ASM
+	@${RM} ${OBJECTDIR}/aula_03.o 
+	${MP_AS}  -fI -W+ie ${PACK_ASSEMBLER_OPTIONS} -d ${DISTDIR}/aulas.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -S ${DISTDIR}/aulas.X.${IMAGE_TYPE}.tmp  -o ${DISTDIR}/aulas.X.${IMAGE_TYPE}.hex  -m ${DISTDIR}/aulas.X.${IMAGE_TYPE}.map  -l ${DISTDIR}/aulas.X.${IMAGE_TYPE}.lss aula_03.ASM
 endif
 
 # ------------------------------------------------------------------------------------
