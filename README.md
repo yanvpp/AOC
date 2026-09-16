@@ -5,6 +5,8 @@
 # Arquitetura e Organização de Computadores
 Repositório destinado às atividadades realizadas na disciplina de Arquitetura e Organização de Computadores.
 
+## [Anotações e resumos](anotacoes)
+
 ## [Materiais](materiais)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 
