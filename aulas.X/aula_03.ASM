@@ -1,12 +1,14 @@
-.DSEG
-.ORG SRAM_START
+.INCLUDE <m328Pdef.INC>
+
+.DSEG ; segmento de memória RAM
+.ORG SRAM_START ; 0x0100 para o ATmega328p
     A: .BYTE 1
     B: .BYTE 1
     C: .BYTE 1
 
-.CSEG
+.CSEG ; segmento da memória de flash (programa)
 
-start:
+START:
     // com endereçamento direto
     LDS R16, A
     LDS R17, B
@@ -35,10 +37,10 @@ start:
 
     // com endereçamento indireto com deslocamento
     LDI R29, HIGH(A) ; YH
-    LDI R28, LOW(B)  ; YL
+    LDI R28, LOW(A)  ; YL
     LDD R16, Y+0 ; R16 <- A
     LDD R17, Y+1 ; R17 <- B
-    ADD R16, R17
+    ADD R16, R17 ; R16 <- R16 + R17
     STD Y+2, R16 ; C <- R16
 
-    RJMP start
+    RJMP START
