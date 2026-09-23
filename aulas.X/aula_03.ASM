@@ -130,9 +130,9 @@ START:
     ADD R16, R17 ; R16 <- R16 + R17
     STD Y+9, R16 ; C[2] <- R16
 
-    LDD R16, Y+3 ; R16 <- A[3]
-    LDD R17, Y+7 ; R17 <- B[3]
-    ADD R16, R17 ; R16 <- R16 + R17
+    LDD R16, Y+3  ; R16 <- A[3]
+    LDD R17, Y+7  ; R17 <- B[3]
+    ADD R16, R17  ; R16 <- R16 + R17
     STD Y+11, R16 ; C[3] <- R16
 
     RJMP START
