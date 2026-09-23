@@ -1,4 +1,4 @@
-.INCLUDE <m328Pdef.INC>
+.INCLUDE <m328Pdef.inc>
 
 .DSEG ; segmento de memória RAM
 .ORG SRAM_START ; 0x0100 para o ATmega328p
@@ -52,7 +52,7 @@ START:
     LDI R27, HIGH(B+1) ; XH
     LDI R26, LOW(B+1)  ; XL
     LD R17, X          ; R17 <- B[1]
-    ADD R16, R17       ; R16 <- R16 + R17
+    ADC R16, R17       ; R16 <- R16 + R17
     LDI R27, HIGH(C+1) ; XH
     LDI R26, LOW(C+1)  ; XL
     ST X, R16          ; C[1] <- R16
@@ -63,7 +63,7 @@ START:
     LDI R27, HIGH(B+2) ; XH
     LDI R26, LOW(B+2)  ; XL
     LD R17, X          ; R17 <- B[2]
-    ADD R16, R17       ; R16 <- R16 + R17
+    ADC R16, R17       ; R16 <- R16 + R17
     LDI R27, HIGH(C+2) ; XH
     LDI R26, LOW(C+2)  ; XL
     ST X, R16          ; C[2] <- R16
@@ -74,7 +74,7 @@ START:
     LDI R27, HIGH(B+3) ; XH
     LDI R26, LOW(B+3)  ; XL
     LD R17, X          ; R17 <- B[3]
-    ADD R16, R17       ; R16 <- R16 + R17
+    ADC R16, R17       ; R16 <- R16 + R17
     LDI R27, HIGH(C+3) ; XH
     LDI R26, LOW(C+3)  ; XL
     ST X, R16          ; C[3] <- R16
@@ -91,7 +91,7 @@ START:
 
     LD R16, X+ ; R16 <- A[0]; depois X++(aponta para R16+1)
     LD R17, Y+ ; R17 <- B[0]; depois X++(aponta para R17+1))
-    ADC R16, R17 ; soma incluindo o carry 
+    ADD R16, R17 ; R16 <- R16 + R17
     ST Z+, R16 ; C[0] <- R16
 
     LD R16, X+ ; R16 <- A[1]; depois X++(aponta para R16+1)
@@ -112,8 +112,8 @@ START:
     // com endereçamento indireto com deslocamento
     // processo byte a byte
 
-    LDI R29, HIGH(B) ; YH
-    LDI R28, LOW(B)  ; YL
+    LDI R29, HIGH(A) ; YH
+    LDI R28, LOW(A)  ; YL
 
     LDD R16, Y+0 ; R16 <- A[0]
     LDD R17, Y+4 ; R17 <- B[0]
