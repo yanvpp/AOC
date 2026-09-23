@@ -16,6 +16,6 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [11/08/2026](computadorRUDI) - Finalizando implementação do programa de matrícula
 - [12/08/2026](BIP) - Apresentação sobre BIP e lista de exercícios
 - [09/09/2026](aulas.X/aula_01.ASM) - Configuração do MPLAB
-- [15/09/2026](aulas.X/aula_02.ASM) - Introdução aos Registradores
-- [16/09/2026](aulas.X/aula_03.ASM) - Modos de endereçamento da SRAM
+- [15/09/2026](aulas.X/aula_02.ASM) - Introdução aos Registradoress
+- [16/09/2026](aulas.X/aula_03.ASM) - Modos de endereçamento da SRAM para soma de 32 bits
 - [21/09/2026](aulas.X/aula_04.ASM) - Operação com vetores utilizando os métodos de endereçamento da SRAM
