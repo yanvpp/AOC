@@ -10,7 +10,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [SRAM](anotacoes/SRAM.md)
 - [Pilha, ponteiro de pilha(SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
 
-## [Materiais](materiais)
+## Materiais
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 
 ## Aulas
