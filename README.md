@@ -5,7 +5,10 @@
 # Arquitetura e Organização de Computadores
 Repositório destinado às atividadades realizadas na disciplina de Arquitetura e Organização de Computadores.
 
-## [Anotações e resumos](anotacoes)
+## Anotações e resumos
+- [Como configurar a IDE](anotacoes/configurarIDE.md)
+- [SRAM](anotacoes/SRAM.md)
+- [Pilha, ponteiro de pilha(SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
 
 ## [Materiais](materiais)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
