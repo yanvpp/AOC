@@ -22,7 +22,7 @@
 1. File -> New Project
 1. Configure:
     - Categories: Microchip Embedded
-    - Projects: Standalon Project
+    - Projects: Standalone Project
     - Clique em `Next`
 1. Configure:
     - Device: ATmega328P (digite)
