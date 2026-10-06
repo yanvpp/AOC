@@ -10,7 +10,6 @@
 .ORG 0x0000
 
 start:
-    ; ---- A = 0x12345678 ----
     LDI XH, HIGH(A)
     LDI XL, LOW(A)
     LDI R16, 0x78     ; LSB
@@ -19,7 +18,6 @@ start:
     LDI R19, 0x12     ; MSB
     RCALL init_32bits
 
-    ; ---- B = 0x00000005 ----
     LDI XH, HIGH(B)
     LDI XL, LOW(B)
     LDI R16, 0x05
@@ -28,12 +26,10 @@ start:
     LDI R19, 0x00
     RCALL init_32bits
 
-    ; ---- zera C antes de usar (só para teste visual) ----
     LDI XH, HIGH(C)
     LDI XL, LOW(C)
     RCALL zera_32bits
 
-    ; ---- C = A - B  (0x12345678 - 0x00000005 = 0x12345673) ----
     LDI XH, HIGH(A)
     LDI XL, LOW(A)
     LDI YH, HIGH(B)
@@ -42,64 +38,61 @@ start:
     LDI ZL, LOW(C)
     RCALL sub_32bits
 
-FIM:
-    RJMP FIM
+end:
+    RJMP end
 
-;--------------------------------------------------------------
 init_32bits:
-    st X+, R16
-    st X+, R17
-    st X+, R18
-    st X+, R19
-    ret
+    ST X+, R16
+    ST X+, R17
+    ST X+, R18
+    ST X+, R19
+    RET
 
-;--------------------------------------------------------------
 zera_32bits:
-    push R16
-    push R17
-    in   R17, SREG
-    push R17
+    PUSH R16
+    PUSH R17
+    IN   R17, SREG
+    PUSH R17
 
-    clr R16
-    st X+, R16
-    st X+, R16
-    st X+, R16
-    st X+, R16
+    CLR R16
+    ST X+, R16
+    ST X+, R16
+    ST X+, R16
+    ST X+, R16
 
-    pop R17
-    out SREG, R17
-    pop R17
-    pop R16
-    ret
+    POP R17
+    OUT SREG, R17
+    POP R17
+    POP R16
+    RET
 
-;--------------------------------------------------------------
 sub_32bits:
-    push R16
-    push R17
-    push R18
-    push R19
-    in   R19, SREG
-    push R19
+    PUSH R16
+    PUSH R17
+    PUSH R18
+    PUSH R19
+    IN   R19, SREG
+    PUSH R19
 
-    ld  R16, X+
-    ld  R17, Y+
-    sub R16, R17
-    st  Z+, R16
+    LD  R16, X+
+    LD  R17, Y+
+    SUB R16, R17
+    ST  Z+, R16
 
-    ldi R18, 3
+    LDI R18, 3
 
 sub_loop:
-    ld  R16, X+
-    ld  R17, Y+
-    sbc R16, R17
-    st  Z+, R16
-    dec R18
-    brne sub_loop
+    LD  R16, X+
+    LD  R17, Y+
+    SBC R16, R17
+    ST  Z+, R16
+    DEC R18
+    BRNE sub_loop
 
-    pop R19
-    out SREG, R19
-    pop R19
-    pop R18
-    pop R17
-    pop R16
-    ret
+    POP R19
+    OUT SREG, R19
+    POP R19
+    POP R18
+    POP R17
+    POP R16
+    RET
