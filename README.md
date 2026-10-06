@@ -24,3 +24,4 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [16/09/2026](aulas.X/aula_03.ASM) - Modos de endereçamento da SRAM para soma de 32 bits
 - [21/09/2026](aulas.X/aula_04.ASM) - Operação com vetores utilizando os métodos de endereçamento da SRAM
 - [30/09/2026](aulas.X/aula_05.ASM) - Pilha, ponteiro da pilha e subrotinas (com pisca-led)
+- [06/10/2026](aulas.X/aula_06.ASM) - Pilha e subrotinas (32 bits)
