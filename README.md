@@ -7,12 +7,13 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 
 ## Anotações e resumos
 - [Como configurar a IDE](anotacoes/configurarIDE.md)
+- [Assembly AVR](anotacoes/assemblyAVR.md)
 - [SRAM](anotacoes/SRAM.md)
 - [Pilha, ponteiro de pilha (SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
 
 ## Materiais
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
-- **Prova 2:** [slides](materiais/slides/prova_02/) - [listas](materiais/listas/prova_02/)
+- **Prova 2:** [slides](materiais/slides/prova_02/)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
