@@ -12,6 +12,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Pilha, ponteiro de pilha (SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
 
 ## Materiais
+- [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
 
