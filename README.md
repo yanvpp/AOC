@@ -13,7 +13,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 
 ## Materiais
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
-- **Prova 2:** [slides](materiais/slides/prova_02/)
+- **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
