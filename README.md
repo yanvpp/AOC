@@ -15,6 +15,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
+- **Prova 3:** [slides](materiais/slides/prova_03/)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
@@ -27,3 +28,4 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [21/09/2026](aulas.X/aula_04.ASM) - Operação com vetores utilizando os métodos de endereçamento da SRAM
 - [30/09/2026](aulas.X/aula_05.ASM) - Pilha, ponteiro da pilha e subrotinas (com pisca-led)
 - [06/10/2026](aulas.X/aula_06.ASM) - Pilha e subrotinas (32 bits)
+- [13/10/2026](aulas.X/aula_07.ASM) - Registradores de entrada e saída I/O
