@@ -10,6 +10,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Assembly AVR](anotacoes/assemblyAVR.md)
 - [SRAM](anotacoes/SRAM.md)
 - [Pilha, ponteiro de pilha (SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
+- [Registradores de entrada e saída](anotacoes/registradoresIO.md)
 
 ## Materiais
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
