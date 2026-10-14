@@ -24,19 +24,14 @@ LOOP:
     SBIS GPIOR0, BOTAO ; se botão = 1 (pressionado), salta
     RJMP NOT_PRESSED
 
-    ; botão pressionado:
+; botão pressionado:
+PRESSED:
     SBI GPIOR0, LED ; liga o LED
-
-
-
-
     
-
 
 NOT_PRESSED:
     CBI GPIOR0, LED1 ; desliga LED
     RJMP LOOP ; volta para o loop
-
 
 END:
     RJMP START ; volta para o começo
