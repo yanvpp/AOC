@@ -11,9 +11,11 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [SRAM](anotacoes/SRAM.md)
 - [Pilha, ponteiro de pilha (SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
 - [Registradores de entrada e saída](anotacoes/registradoresIO.md)
+- [Portas de Entrada e Saída (GPIO)](anotacoes/GPIO.md)
 
 ## Materiais
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
+- [Projeto Base MPLabX](materiais/ProjetoBase.X/)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
 - **Prova 3:** [slides](materiais/slides/prova_03/)
