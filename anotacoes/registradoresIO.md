@@ -1,5 +1,7 @@
 # Assembly AVR: Registradores de I/O (ATmega328p)
 
+[slides](../materiais/slides/prova_03/registradoresIO.pdf)
+
 ## 1. Conceito: o que são registradores de I/O
 
 - Para processar dados, basta trazê-los aos registradores da CPU (R0 a R31) e usar instruções lógicas e aritméticas.

@@ -1,7 +1,5 @@
 # Resumo por tópicos — Assembly AVR (ATmega328p)
 
-Material do Prof. Roberto de Matos (IFSC, Câmpus São José), reunindo três apresentações:
-
 - **[P1]** Projetando, codificando e simulando para MCU
 - **[P2]** Assembly AVR — Trabalhando com os registradores
 - **[P3]** Assembly AVR — SRAM

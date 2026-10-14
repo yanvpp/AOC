@@ -1,5 +1,7 @@
 # Pilha, Ponteiro da Pilha (SP) e Sub-rotinas — AVR ATmega328p
 
+[slides](../materiais/slides/prova_02/pilha_sp_subrotinas.pdf)
+
 ## 1. Motivação: por que sub-rotinas?
 
 O exemplo "pisca-pisca" com código **duplicado** (ex.: dois blocos idênticos

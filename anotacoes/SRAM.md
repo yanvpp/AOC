@@ -1,5 +1,7 @@
 # Modos de Endereçamento — Memória de Dados (SRAM) — AVR/ATmega328p
 
+[slides](../materiais/slides/prova_02/sram.pdf)
+
 Resumo dos modos de endereçamento usados para acessar a memória de dados (SRAM)
 no núcleo AVR, com sintaxe, semântica e exemplos de código.
 
