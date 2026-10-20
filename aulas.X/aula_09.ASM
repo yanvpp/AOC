@@ -22,7 +22,7 @@ LOOP:
 
     ; se o botão seleção está pressionado:
     SBIS PINB, BOTAO_SELECAO ; pula a próxima instrução
-    ORI R16, 0X0F            ; apaga os 4 bits mais significativos
+    ORI R16, 0XF0            ; apaga os 4 bits mais significativos
 
     OUT PORTD, R16           ; atualiza os LEDs
     RJMP LOOP                ; recomeça o loop
