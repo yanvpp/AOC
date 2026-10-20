@@ -32,4 +32,5 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [30/09/2026](aulas.X/aula_05.ASM) - Pilha, ponteiro da pilha e subrotinas (com pisca-led)
 - [06/10/2026](aulas.X/aula_06.ASM) - Pilha e subrotinas (32 bits)
 - [13/10/2026](aulas.X/aula_07.ASM) - Registradores de entrada e saída I/O
-- [14/10/2026](aulas.X/aula_08.ASM) - Implementação do botão pisca LED
+- [14/10/2026](aulas.X/aula_08.ASM) - Implementação do botão pisca 1 LED
+- [14/10/2026](aulas.X/aula_09.ASM) - Implementação do botão pisca 2 grupos de 4 LEDs
