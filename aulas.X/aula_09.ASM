@@ -1,5 +1,7 @@
 .INCLUDE <m328Pdef.inc>
 
+; "lê no pin, escreve no port"
+
 .EQU BOTAO_AJUSTE  = PB1
 .EQU BOTAO_SELECAO = PB0
 
