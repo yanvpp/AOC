@@ -12,6 +12,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Pilha, ponteiro de pilha (SP) e subrotinas](anotacoes/pilhas-ponteiros-subrotinas.md)
 - [Registradores de entrada e saída](anotacoes/registradoresIO.md)
 - [Portas de Entrada e Saída (GPIO)](anotacoes/GPIO.md)
+- [Interrupção Externa](anotacoes/interrupcao.md)
 
 ## Materiais
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
@@ -34,3 +35,4 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [13/10/2026](aulas.X/aula_07.ASM) - Registradores de entrada e saída I/O
 - [14/10/2026](aulas.X/aula_08.ASM) - Implementação do botão pisca 1 LED
 - [20/10/2026](aulas.X/aula_09.ASM) - Implementação do botão pisca 2 grupos de 4 LEDs
+- [21/10/2026](aulas.X/aula_10.ASM) - Programando com interrupções
