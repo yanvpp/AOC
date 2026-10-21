@@ -2,7 +2,7 @@
 
 [slides](../materiais/slides/prova_03/portasIO_GPIO.pdf)
 
-## 1. O que é GPIO
+## 1. O que é GPIO (_General-Purpose Input/Output_)
 
 - Portas de entrada e saída de uso geral (**GPIO**) são os periféricos **mais simples** do microcontrolador.
 - Forma mais simples de interagir com **sensores (entrada)** e **atuadores (saída)**.
