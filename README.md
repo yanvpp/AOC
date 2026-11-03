@@ -17,6 +17,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 ## Materiais
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
 - [Projeto Base MPLabX](materiais/ProjetoBase.X/)
+- [Manual do conjunto de instruções do AVR](materiais/manual_instrucoes_avr.pdf)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
 - **Prova 3:** [slides](materiais/slides/prova_03/) - [códigos fornecidos](materiais/slides/prova_03/codigos/)
