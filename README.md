@@ -36,3 +36,5 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [14/10/2026](aulas.X/aula_08.ASM) - Implementação do botão pisca 1 LED
 - [20/10/2026](aulas.X/aula_09.ASM) - Implementação do botão pisca 2 grupos de 4 LEDs
 - [21/10/2026](aulas.X/aula_10.ASM) - Programando com interrupções
+- [27/10/2026](aulas.X/aula_11.ASM) - Incrementador e decrementador
+- [03/11/2026](aulas.X/aula_12.ASM) - Incrementador e decrementador com interrupção
