@@ -19,7 +19,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Projeto Base MPLabX](materiais/ProjetoBase.X/)
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
-- **Prova 3:** [slides](materiais/slides/prova_03/)
+- **Prova 3:** [slides](materiais/slides/prova_03/) - [códigos fornecidos](materiais/slides/prova_03/codigos/)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
