@@ -49,17 +49,27 @@ setup:
   LDI aux, 0x0F            ; 0b00001111   
   OUT DDRB, aux            ; configura PB0-3 como saída
   OUT DDRC, aux            ; configura PC0-3 como saída
-  CBI DDRD, botao_incdec   ; configura o PD2 como entrada
-  CBI DDRD, botao_reset    ; configura o PD3 como entrada
+  CBI DDRD, botao_incdec   ; configura o PD3 como entrada
+  CBI DDRD, botao_reset    ; configura o PD2 como entrada
   SBI PORTD, botao_reset   ; liga o pull-up do PD2
   SBI PORTD, botao_incdec  ; liga o pull-up do PD3
 
   RCALL valores_iniciais
+  ; ================================================================
+  ; EICRA: sensibilidade das interrupções (2 bits por interrupção)
 
-  LDI aux, 0x0A
-  sts EICRA, aux   ; configura INT0 e INT1 sensível a borda de descida
-  sbi EIMSK, INT0  ; habilita a INT0
-  sbi EIMSK, INT1  ; habilita a INT1
+  ;   ISCx1 ISCx0 = 00 nível baixo | 01 qualquer mudança
+  ;                 10 descida     | 11 subida
+  
+  ; INT0 (RST):     descida (10)           -> dispara ao pressionar
+  ; INT1 (INC/DEC): qualquer mudança (01)  -> pressionar e soltar
+  ; EICRA = 0b0000_0110 = 0x06
+  ; ================================================================
+
+  LDI aux, 0x06
+  STS EICRA, aux
+  SBI EIMSK, INT0   ; habilita a INT0
+  SBI EIMSK, INT1   ; habilita a INT1
 
   SEI              ; habilita a interrupção global
 
@@ -110,7 +120,6 @@ incdec_solto:
   BREQ zera_c ; se count_c = 0, volta para o 15
   DEC aux     ; se não, decrementa count_c
   RJMP fim_c
-  RET
 
 zera_c:
   LDI aux, 15 ; count_c = 15
@@ -145,7 +154,7 @@ isr_int1:
   push aux
 
   SBIC PIND, botao_incdec ; salta a próxima instrução se inc/dec pressionado (0)
-  RJMP incdec_solto
+  RJMP botao_solto
   RCALL incdec_pressionado
   RJMP fim_int1
 
