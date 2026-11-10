@@ -1,5 +1,7 @@
 # Temporizador/Contador (T/C) — ATmega328p
 
+[slides](../materiais/slides/prova_04/temporizador_contador_handout.pdf)
+
 ## 1. Motivação: como contar tempo com precisão?
 
 ### Contagem por número de ciclos (espera ocupada)
