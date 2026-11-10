@@ -13,6 +13,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Registradores de entrada e saída](anotacoes/registradoresIO.md)
 - [Portas de Entrada e Saída (GPIO)](anotacoes/GPIO.md)
 - [Interrupção Externa](anotacoes/interrupcao.md)
+- [Temporizador contador](anotacoes/temporizador_contador.md)
 
 ## Materiais
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
@@ -21,6 +22,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
 - **Prova 3:** [slides](materiais/slides/prova_03/) - [códigos fornecidos](materiais/slides/prova_03/codigos/)
+- **Prova 4:** [slides](materiais/slides/prova_04/)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
@@ -39,3 +41,4 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [21/10/2026](aulas.X/aula_10.ASM) - Programando com interrupções
 - [27/10/2026](aulas.X/aula_11.ASM) - Incrementador e decrementador
 - [03/11/2026](aulas.X/aula_12.ASM) - Incrementador e decrementador com interrupção
+- [10/11/2026](aulas.X/aula_13.ASM) - Temporizador e contador handout
