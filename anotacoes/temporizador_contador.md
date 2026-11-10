@@ -203,6 +203,11 @@ isr_tc0b:
 fim:
   reti
 ```
+>componentes a monitorar durante a execução do código acima:
+
+<p align="center">
+  <img src="imagens/temporizador_contador/IOview_MPLABX.png" alt="Componentes a monitorar na janela IO View da IDE">
+</p>
 
 Pontos do exemplo:
 
