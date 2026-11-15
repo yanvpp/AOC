@@ -26,12 +26,10 @@ setup:
     STS TCCR1A, R16     ; OC1A/OC1B desconectados
 
     LDI R16, 0b00000100 ; TCCR1B: WGM13:WGM12 = 00 => modo normal
-    STS TCCR1A, R16     ; CS12:CS10 = 100 => prescaler 256 (inicia a contagem)
+    STS TCCR1B, R16     ; CS12:CS10 = 100 => prescaler 256 (inicia a contagem)
 
     LDI R16, 0b00000001
     STS TIMSK1, R16     ; TOIE1 = 1: habilita a interrupção por overflow do T/C1
-
-    LDI R16, 0b00000001
 
     SEI                 ; habilita  as interrupções globais
 
