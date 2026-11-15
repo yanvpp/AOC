@@ -15,6 +15,13 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [Interrupção Externa](anotacoes/interrupcao.md)
 - [Temporizador contador](anotacoes/temporizador_contador.md)
 
+## Provas
+
+- [AI1](provas/av1) - Arquitetura e organização de computadores
+- [AP2 - Parte 1](provas/av2-1) - Região de memória de dados
+- [AP2 - Parte 2](provas/av2-2) - GPIO e interrupções
+- [AP2 - Parte 3](provas/av2-3) - Temporizador contador
+
 ## Materiais
 - [Datasheet Assembly](materiais/slides/prova_02/datasheet_ATMega328P.pdf)
 - [Projeto Base MPLabX](materiais/ProjetoBase.X/)
@@ -22,7 +29,7 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - **Prova 1:** [slides](materiais/slides/prova_01/) - [listas resolvidas](materiais/listas/prova_01/)
 - **Prova 2:** [slides](materiais/slides/prova_02/) - [prova antiga](prova_antiga)
 - **Prova 3:** [slides](materiais/slides/prova_03/) - [códigos fornecidos](materiais/slides/prova_03/codigos/)
-- **Prova 4:** [slides](materiais/slides/prova_04/)
+- **Prova 4:** [slides](materiais/slides/prova_04/) - [códigos fornecidos](materiais/slides/prova_04/codigos/)
 
 ## Aulas
 - [04/08/2026](calculadoraRUDI) - Implementação de calculadora rudimentar
@@ -42,3 +49,5 @@ Repositório destinado às atividadades realizadas na disciplina de Arquitetura 
 - [27/10/2026](aulas.X/aula_11.ASM) - Incrementador e decrementador
 - [03/11/2026](aulas.X/aula_12.ASM) - Incrementador e decrementador com interrupção
 - [10/11/2026](aulas.X/aula_13.ASM) - Temporizador e contador handout
+- [11/11/2026](aulas.X/aula_14.ASM) - Interrupção por comparação
+- [17/11/2026](aulas.X/aula_15.ASM) - Exemplo modificado para utilizar o TC1 de 16 bits
