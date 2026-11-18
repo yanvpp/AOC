@@ -221,6 +221,11 @@ Pontos do exemplo:
 ---
 
 ## 7. Modo CTC (Clear Timer on Compare Match)
+Disponível em (datasheet)[../materiais/slides/prova_02/datasheet_ATMega328P.pdf] na página 107
+
+<p align="center">
+  <img src="imagens/temporizador_contador/tabela_bit_mode.png" alt="Waveform Generation Mode Bit Description">
+</p>
 
 ### Ideia
 
@@ -230,11 +235,9 @@ Pontos do exemplo:
 
 ### Fórmulas
 
-```
-t_comparação = (OCR0A + 1) × prescaler / fosc
+$$ t_{\text{comparação}} = \frac{(\text{OCR0A} + 1) \cdot \text{prescaler}}{f_{\text{clock}}} $$
 
-OCR0A = (t × fosc / prescaler) − 1
-```
+$$ \text{OCR0A} = \frac{t \cdot f_{\text{clock}}}{\text{prescaler}} - 1$$
 
 - O contador conta de 0 a `OCR0A`, ou seja, **`OCR0A + 1` contagens** por ciclo (por isso o "+ 1").
 - Com `OCR0A = 255`, o resultado é o mesmo do estouro do modo normal (16,384 ms com prescaler 1024).
