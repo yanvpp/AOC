@@ -220,14 +220,171 @@ Pontos do exemplo:
 
 ---
 
-## 7. Experimentos (slide 9)
+## 7. Modo CTC (Clear Timer on Compare Match)
+
+### Ideia
+
+- No **modo normal**, o T/C0 sempre conta de 0 até **TOP = 255** (`0xFF`) e só então estoura. Os intervalos possíveis ficam presos aos valores da tabela da seção 3 e raramente dão um tempo "redondo".
+- No **modo CTC**, o **TOP passa a ser o valor de `OCR0A`**: quando `TCNT0` chega a `OCR0A`, o hardware **seta a flag `OCF0A`** e, no pulso seguinte do clock, **zera o `TCNT0`**. Resultado: um dente de serra de **altura ajustável**.
+- Como o TOP é escolhido por quem programa, é possível **acertar o intervalo com precisão** (ex.: 1 s exato), o que o modo normal não permite.
+
+### Fórmulas
+
+```
+t_comparação = (OCR0A + 1) × prescaler / fosc
+
+OCR0A = (t × fosc / prescaler) − 1
+```
+
+- O contador conta de 0 a `OCR0A`, ou seja, **`OCR0A + 1` contagens** por ciclo (por isso o "+ 1").
+- Com `OCR0A = 255`, o resultado é o mesmo do estouro do modo normal (16,384 ms com prescaler 1024).
+
+### Configuração do modo (WGM)
+
+O modo é escolhido pelos bits **WGM02:WGM00**, que ficam em dois registradores:
+
+| Bit | Registrador | Posição |
+|---|---|---|
+| WGM01, WGM00 | **TCCR0A** | bits 1 e 0 |
+| WGM02 | **TCCR0B** | bit 3 |
+
+| Modo | WGM02 | WGM01 | WGM00 | Descrição | TOP |
+|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | **Normal** | `0xFF` (255) |
+| 2 | 0 | 1 | 0 | **CTC** | **`OCR0A`** |
+
+(Os demais modos do datasheet são de PWM.)
+
+Para o CTC, basta **`WGM01 = 1`** (com WGM02 e WGM00 em 0):
+
+```asm
+ldi R16, 0b00000010   ; TCCR0A: WGM01 = 1 -> modo CTC
+out TCCR0A, R16
+```
+
+### Interrupção por comparação
+
+| Item | Normal (estouro) | CTC (comparação A) |
+|---|---|---|
+| Bit de habilitação (TIMSK0) | `TOIE0` (bit 0) | **`OCIE0A`** (bit 1) |
+| Valor de `TIMSK0` | `0b00000001` | **`0b00000010`** |
+| Flag (TIFR0) | `TOV0` (bit 0) | **`OCF0A`** (bit 1) |
+| Vetor | `0x0020` (TIMER0 OVF) | **`0x001C`** (TIMER0 COMPA) |
+
+- Assim como no estouro, a flag é **zerada automaticamente** quando a ISR é executada.
+- A comparação B (`OCR0B`, `OCIE0B`, vetor `0x001E`) existe, mas o **TOP do CTC é sempre o `OCR0A`**.
+
+### Roteiro para usar a interrupção por comparação A
+
+1. **Definir o TOP:** escrever o valor calculado em `OCR0A`.
+2. **Escolher o modo CTC:** `WGM01 = 1` em `TCCR0A`.
+3. **Configurar o prescaler** em `TCCR0B` (isso dá a partida na contagem, então vem por último entre as configurações do T/C).
+4. **Habilitar a interrupção:** `OCIE0A = 1` em `TIMSK0` (com `sts`).
+5. **Habilitar a interrupção global:** `sei`.
+6. **Escrever a ISR** no vetor `0x001C` (`.ORG 0x001C` + `rjmp isr`) e terminar com `reti`.
+
+### Escolhendo o prescaler para um tempo exato (1 s)
+
+O objetivo é que `(OCR0A + 1) × (nº de interrupções)` seja um número inteiro de ticks do prescaler, com os dois valores cabendo em 8 bits (≤ 256):
+
+| Prescaler | Ticks em 1 s (16 MHz) | Divisão com fatores ≤ 256 | Serve? |
+|---|---|---|---|
+| 64 | 250 000 | não existe | não |
+| 256 | 62 500 | 250 × 250 | sim |
+| **1024** | **15 625** | **125 × 125** | **sim (escolhido)** |
+
+Com **prescaler 1024**: `OCR0A = 124` gera uma interrupção a cada **125 × 64 µs = 8 ms**, e **125 interrupções = 1 s exato**.
+
+### Exemplo: pisca LED de 1 s exato com CTC (`PB5`)
+
+Comparação com o exemplo da seção 6:
+
+| | Overflow (seção 6) | CTC |
+|---|---|---|
+| Intervalo por interrupção | 16,384 ms | **8 ms** (`OCR0A = 124`) |
+| Interrupções por inversão do LED | 62 | **125** |
+| Tempo entre inversões | 1 015,81 ms | **1 000 ms exatos** |
+
+**Fluxograma:**
+
+- **Principal:** Reset → Configura pino do LED → `OCR0A = 124` → Configura modo CTC (`TCCR0A`) → Prescaler 1024 (`TCCR0B`) → Habilita int. comparação A (`OCIE0A`) → contador = 0 → Habilita I global (`sei`) → laço vazio.
+- **`isr_tc0a`:** `inc r16` → `r16 == 125?` (Não: retorno; Sim: inverte LED e `r16 = 0`) → Retorno.
+
+```asm
+.ORG 0x0000         ; Vetor de reset
+    RJMP setup
+
+.ORG 0x001C         ; Vetor do T/C0 Compare Match A (TIMER0 COMPA)
+    RJMP isr_tc0a
+
+setup:
+    SBI DDRB, PB5   ; PB5 como saída
+    CBI PORTB, PB5  ; desliga LED
+
+    LDI R16, 124    ; TOP = 124 (conta de 0 a 124, 125 contagens)
+    OUT OCR0A, R16
+
+    LDI R16, 0b0000_0010 ; WGM01 = 1 e WGM00 = 0 (WGM02 = 0 no TCCR0B) -> modo CTC
+    OUT TCCR0A, R16
+
+    LDI R16, 0b0000_0101 ; prescaler 1024
+    OUT TCCR0B, R16     ; (escrever o prescaler dá início à contagem)
+
+    LDI R16, 0b0000_0010
+    STS TIMSK0, R16     ; habilita a interrupção por comparação A
+
+    CLR R16             ; contador de interrupções começa em 0
+
+    SEI                 ; habilita as interrupções globais
+
+main:
+    RJMP main
+
+isr_tc0a:
+    INC R16
+    CPI R16, 125
+    BRNE fim
+    SBI PINB, PB5       ; inverte o LED a cada 1 segundo exato (125 * 8 ms)
+
+    CLR R16
+
+fim:
+    RETI
+```
+
+Pontos do exemplo:
+
+- **`out OCR0A, R16`** com `124`: define o TOP, e o T/C0 conta de 0 a 124.
+- **`out TCCR0A, R16`** com `0b00000010`: é a linha que coloca o T/C0 em **CTC**. Sem ela o contador continua no modo normal e só zera em 255, o que dá ≈ 2,05 s em vez de 1 s.
+- **Ordem do setup:** `OCR0A` e o modo são configurados **antes** do prescaler, porque escrever o `TCCR0B` dá a partida na contagem.
+- **`sts TIMSK0, R16`** com `0b00000010`: **OCIE0A = 1** (o bit 0, TOIE0, fica desabilitado).
+- A precisão vem do **hardware**: o T/C continua contando independente da ISR, então o tempo de execução da interrupção **não se acumula**.
+
+### CTC no T/C1 (16 bits)
+
+- No T/C1, o modo CTC usa **`WGM12 = 1`** (bit 3 do `TCCR1B`) e o TOP é o **`OCR1A`** de 16 bits (`OCR1AH`/`OCR1AL`, escritos com `sts`, **byte alto primeiro**).
+- Habilitação: **`OCIE1A`** (bit 1 do `TIMSK1`). Vetor: **`0x0016`** (TIMER1 COMPA).
+- Com prescaler 256 e `OCR1A = 62499`, uma única interrupção já dá **1 s exato** (62 500 × 16 µs), sem contador auxiliar.
+
+### Pontos de atenção para a prova (CTC)
+
+- **CTC:** o TOP é o `OCR0A` e o T/C **zera ao atingir a comparação**. É o modo para gerar intervalos de tempo **precisos**.
+- **t_comparação = (OCR0A + 1) × prescaler / fosc** (o "+ 1" é porque a contagem começa em 0).
+- **Modo CTC no T/C0:** `WGM01 = 1` em `TCCR0A` (WGM02 = 0 e WGM00 = 0).
+- **Interrupção por comparação A:** `OCIE0A` (bit 1 do `TIMSK0`), flag `OCF0A` (TIFR0), vetor **`0x001C`**.
+- Para 1 s exato a 16 MHz com T/C0: prescaler **1024**, `OCR0A = 124`, **125 interrupções** (ou prescaler 256, `OCR0A = 249`, 250 interrupções).
+- O prescaler só dá a partida **depois** que `OCR0A`, o modo e a interrupção estão configurados.
+
+---
+
+## 8. Experimentos (slide 9)
 
 - **Testar e gravar** todos os trechos de código apresentados (MPLABX IDE).
 - Fazer a **atividade proposta**.
 
 ---
 
-## 8. Pontos de atenção para a prova
+## 9. Pontos de atenção para a prova
 
 - **T/C = periférico de hardware** que conta pulsos de clock (ou eventos externos) sem ocupar a CPU. Evita espera ocupada, é preciso e economiza energia.
 - ATmega328p: **TC0 e TC2 de 8 bits**, **TC1 de 16 bits**.
