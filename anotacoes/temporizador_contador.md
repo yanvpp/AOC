@@ -139,10 +139,9 @@ Bits **CS02, CS01, CS00**:
 | 0 | 1 | 1 | clock/64 |
 | 1 | 0 | 0 | clock/256 |
 | 1 | 0 | 1 | clock/1024 |
-| 1 | 1 | 0 | Clock **externo** no pino **T0** (borda) |
-| 1 | 1 | 1 | Clock **externo** no pino **T0** (borda) |
+| 1 | 1 | 0 | Clock **externo** no pino **T0** (borda de descida) |
+| 1 | 1 | 1 | Clock **externo** no pino **T0** (borda de subida) |
 
-- Nos slides, as duas últimas linhas aparecem como "borda de subida". Pelo datasheet, `110` é borda de **descida** e `111` é borda de **subida** (vale conferir).
 - Escrever em CS02:CS00 **liga o T/C** (começa a contar); com `000` ele fica parado.
 
 ---
