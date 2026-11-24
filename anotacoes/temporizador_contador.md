@@ -218,7 +218,7 @@ Pontos do exemplo:
 ---
 
 ## 7. Modo CTC (Clear Timer on Compare Match)
-Disponível em (datasheet)[../materiais/slides/prova_02/datasheet_ATMega328P.pdf] na página 107
+Disponível em [datasheet](../materiais/slides/prova_02/datasheet_ATMega328P.pdf) na página 107
 
 <p align="center">
   <img src="imagens/temporizador_contador/tabela_bit_mode.png" alt="Waveform Generation Mode Bit Description">
