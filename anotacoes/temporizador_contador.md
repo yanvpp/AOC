@@ -65,9 +65,7 @@ Contagem de ciclos do exemplo (R16 e R17 começam em 0, então cada laço roda 2
 
 ### Fórmula do tempo de estouro
 
-```
-t_estouro = (TOP + 1) × prescaler / fosc
-```
+$$t_{\text{estouro}} = \frac{(\text{TOP} + 1) \times \text{prescaler}}{f_{\text{oscilador}}}$$
 
 Onde:
 
